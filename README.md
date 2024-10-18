@@ -86,7 +86,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you have any questions or feedback, please don't hesitate to reach out:
 
-- Email: your.email@example.com
-- GitHub Issues: [https://github.com/your-username/autism-detection-system/issues](https://github.com/your-username/autism-detection-system/issues)
+- Email: fitsumgetachewtola@gmail.com
+- GitHub Issues: [https://github.com/fitsumgetachew/AutismDetection/issues](https://github.com/fitsumgetachew/AutismDetection/issues)
 
 Thank you for your interest in the Autism Detection System!
