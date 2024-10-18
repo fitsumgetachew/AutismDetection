@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autism Detection Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="/" class="flex items-center py-4 px-2">
+                            <span class="font-semibold text-gray-500 text-lg">Autism Detect</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="/" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Home</a>
+                    <button id="stop-test" class="py-2 px-2 font-medium text-white bg-red-500 rounded hover:bg-red-400 transition duration-300">Stop Test</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-8">Autism Detection Test</h1>
+        <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6">
+            <div id="instructions" class="mb-4">
+                <p class="text-lg text-gray-700">Please position yourself in front of the camera and ensure your face is clearly visible.</p>
+            </div>
+            <div id="video-container" class="relative">
+                <img src="{{ url_for('video_feed') }}" width="100%" alt="Video stream">
+                <div id="face-overlay" class="absolute top-0 left-0 w-full h-full border-2 border-blue-500 hidden"></div>
+            </div>
+            <div id="result" class="mt-4 text-center text-2xl font-semibold hidden"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faceOverlay = document.getElementById('face-overlay');
+            const resultDiv = document.getElementById('result');
+            const stopTestBtn = document.getElementById('stop-test');
+
+            // Simulating face detection (in reality, this would be based on backend data)
+            setTimeout(() => {
+                faceOverlay.classList.remove('hidden');
+                resultDiv.textContent = 'Processing...';
+                resultDiv.classList.remove('hidden');
+
+                // Simulating classification result (in reality, this would be based on backend data)
+                setTimeout(() => {
+                    resultDiv.textContent = 'Result: Non Autistic';
+                    resultDiv.classList.add('text-green-500');
+                }, 3000);
+            }, 2000);
+
+            stopTestBtn.addEventListener('click', () => {
+                // In a real application, you'd want to stop the video feed and clean up resources
+                window.location.href = '/';
+            });
+        });
+    </script>
+</body>
+</html>

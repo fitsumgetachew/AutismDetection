@@ -32,7 +32,7 @@ def classify_autism(face_img):
     processed_img = preprocess_image(face_img)
     prediction = model.predict(processed_img)
     print("prediction value" ,prediction)
-    return 'Non Autistic' if prediction > 0.015 else 'Autistic'
+    return 'Non Autistic' if prediction > 0.5 else 'Autistic'
 
 
 def gen_frames():
